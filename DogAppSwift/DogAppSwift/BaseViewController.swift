@@ -54,7 +54,9 @@ class BaseViewController: UIViewController {
         favoriteCollectionView.layer.masksToBounds = false
         setupFavoriteFlowLayout()
         
+        // Setup the delegate and target for text editing changed events
         searchBar.delegate = self
+        searchBar.addTarget(self, action: #selector(textModified(textField:)), for: .editingChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -157,19 +159,18 @@ extension BaseViewController: FavoriteBreedCollectionViewCellDelegate {
 }
 
 extension BaseViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let text = (searchBar.text ?? "") + string
-        if text == "" {
-            print("emtpy")
-            modifiedCardData = baseCardData
-            return true
-        }
-        searchAndModify(string: text)
-        DispatchQueue.main.async {
-            self.dogCardCollectionView.reloadData()
-        }
-        return true
-    }
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        let text = (searchBar.text ?? "") + string
+//        if text == "" {
+//            print("emtpy")
+//            modifiedCardData = baseCardData
+//            return true
+//        }
+//        searchAndModify(string: text)
+//
+//        return true
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
@@ -181,11 +182,21 @@ extension BaseViewController: UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    // Search for string within the cards
-    func searchAndModify(string:String) {
-        let filteredData = baseCardData.filter{data in
-            return data.breedName.range(of: string, options: .caseInsensitive) != nil
+    // Handle text modified events
+    @objc func textModified(textField:UITextField) {
+        guard let text = textField.text else {
+            return
         }
-        modifiedCardData = filteredData
+        if text == "" {
+            modifiedCardData = baseCardData
+        } else {
+            let filteredData = baseCardData.filter{data in
+                return data.breedName.range(of: text, options: .caseInsensitive) != nil
+            }
+            modifiedCardData = filteredData
+        }
+        DispatchQueue.main.async {
+            self.dogCardCollectionView.reloadData()
+        }
     }
 }

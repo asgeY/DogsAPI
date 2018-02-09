@@ -30,7 +30,6 @@ class ModalCollectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        setCollectionViewItemSizes()
     }
     
     func setupCloseButton() {
@@ -42,7 +41,6 @@ class ModalCollectionViewController: UIViewController {
     }
     
     func setupFlowLayout() {
-//        let layout = CustomFlowLayout(scrollDirection: .vertical)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 75, left: 0, bottom: 75, right: 0)
@@ -66,14 +64,6 @@ class ModalCollectionViewController: UIViewController {
 
 extension ModalCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if let imageView = collectionView.cellForItem(at: indexPath)?.viewWithTag(1) as? UIImageView {
-//            if let size = imageView.image?.size {
-//                if size.width > collectionView.bounds.width * 0.8 {
-//                    return CGSize(width: collectionView.bounds.width * 0.8, height: size.height * (collectionView.bounds.width * 0.8 / size.width))
-//                }
-//                return size
-//            }
-//        }
         if let cell = collectionView.cellForItem(at: indexPath) {
             return cell.bounds.size
         }
@@ -94,8 +84,7 @@ extension ModalCollectionViewController: UICollectionViewDataSource {
             if let url = imageURLs?[indexPath.item] {
                 DispatchQueue.main.async {
                     imageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (_, _, _, _) in
-//                        print("the image width:\(imageView.image?.size.width) and height:\(imageView.image?.size.height)")
-                        if let image = imageView.image {
+                            if let image = imageView.image {
                             let size = self.getScaledSize(image: image, collectionView: collectionView)
                             cell.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
                             collectionView.collectionViewLayout.invalidateLayout()
