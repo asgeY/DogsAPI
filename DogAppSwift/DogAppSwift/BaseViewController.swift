@@ -183,13 +183,9 @@ extension BaseViewController: UITextFieldDelegate {
     
     // Search for string within the cards
     func searchAndModify(string:String) {
-        var newData = [DogCardData]()
-        // Change to map
-        for data in baseCardData {
-            if data.breedName.range(of: string, options: .caseInsensitive) != nil {
-                newData.append(data)
-            }
+        let filteredData = baseCardData.filter{data in
+            return data.breedName.range(of: string, options: .caseInsensitive) != nil
         }
-        modifiedCardData = newData
+        modifiedCardData = filteredData
     }
 }
