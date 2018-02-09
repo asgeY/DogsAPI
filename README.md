@@ -4,6 +4,7 @@ Ongoing project to explore various implementations of a mobile app that accesses
 
 Implementations completed:
 - Swift
+<img src="ExampleSwiftScreen.png" width="230px" height="400px" />
 
 Implementations to be considered:
 - RxSwift
