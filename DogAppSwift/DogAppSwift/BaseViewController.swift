@@ -10,11 +10,13 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    var cardData = [DogCardData]()
+    var baseCardData = [DogCardData]()
+    var modifiedCardData = [DogCardData]()
     var interstitialLoadingView:InterstitialLoadingView?
     
     @IBOutlet weak var dogCardCollectionView: UICollectionView!
     @IBOutlet weak var favoriteCollectionView: UICollectionView!
+    @IBOutlet weak var searchBar: CustomSearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +30,9 @@ class BaseViewController: UIViewController {
             if let breeds = breeds {
                 for breed in breeds {
                     let newDogData = DogCardData(breedName: breed)
-                    self.cardData.append(newDogData)
+                    self.baseCardData.append(newDogData)
                 }
+                self.modifiedCardData = self.baseCardData
                 DispatchQueue.main.async {
                     interView.isHidden = true
                     self.dogCardCollectionView.reloadData()
@@ -50,6 +53,8 @@ class BaseViewController: UIViewController {
         favoriteCollectionView.showsHorizontalScrollIndicator = false
         favoriteCollectionView.layer.masksToBounds = false
         setupFavoriteFlowLayout()
+        
+        searchBar.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,7 +102,7 @@ class BaseViewController: UIViewController {
 extension BaseViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == dogCardCollectionView {
-            return cardData.count
+            return modifiedCardData.count
         }
         if collectionView == favoriteCollectionView {
             return FavoriteBreedManager.shared.getFavorites().count
@@ -107,7 +112,7 @@ extension BaseViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == dogCardCollectionView {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DogCardCell", for: indexPath) as? DogCard {
-                cell.data = cardData[indexPath.item]
+                cell.data = modifiedCardData[indexPath.item]
                 cell.updateCell()
                 cell.delegate = self
                 return cell
@@ -148,5 +153,43 @@ extension BaseViewController: FavoriteBreedCollectionViewCellDelegate {
         DispatchQueue.main.async {
             self.favoriteCollectionView.reloadData()
         }
+    }
+}
+
+extension BaseViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = (searchBar.text ?? "") + string
+        if text == "" {
+            print("emtpy")
+            modifiedCardData = baseCardData
+            return true
+        }
+        searchAndModify(string: text)
+        DispatchQueue.main.async {
+            self.dogCardCollectionView.reloadData()
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
+    // End editing on touch anywhere
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    // Search for string within the cards
+    func searchAndModify(string:String) {
+        var newData = [DogCardData]()
+        // Change to map
+        for data in baseCardData {
+            if data.breedName.range(of: string, options: .caseInsensitive) != nil {
+                newData.append(data)
+            }
+        }
+        modifiedCardData = newData
     }
 }

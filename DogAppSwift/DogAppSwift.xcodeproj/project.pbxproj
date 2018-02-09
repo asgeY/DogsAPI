@@ -11,6 +11,7 @@
 		8073557920198458000CC1B4 /* FavoriteBreedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073557720198458000CC1B4 /* FavoriteBreedCollectionViewCell.swift */; };
 		8073557A20198458000CC1B4 /* FavoriteBreedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8073557820198458000CC1B4 /* FavoriteBreedCollectionViewCell.xib */; };
 		8073557D2019DA8F000CC1B4 /* ModalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073557C2019DA8F000CC1B4 /* ModalCollectionViewController.swift */; };
+		8075A697202D2E7C0058BB5B /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075A696202D2E7C0058BB5B /* CustomSearchBar.swift */; };
 		80860DFA2016BC7C00A58A50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80860DF92016BC7C00A58A50 /* AppDelegate.swift */; };
 		80860DFC2016BC7C00A58A50 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80860DFB2016BC7C00A58A50 /* BaseViewController.swift */; };
 		80860DFF2016BC7C00A58A50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80860DFD2016BC7C00A58A50 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		8073557720198458000CC1B4 /* FavoriteBreedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBreedCollectionViewCell.swift; sourceTree = "<group>"; };
 		8073557820198458000CC1B4 /* FavoriteBreedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteBreedCollectionViewCell.xib; sourceTree = "<group>"; };
 		8073557C2019DA8F000CC1B4 /* ModalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalCollectionViewController.swift; sourceTree = "<group>"; };
+		8075A696202D2E7C0058BB5B /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		80860DF62016BC7C00A58A50 /* DogAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80860DF92016BC7C00A58A50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80860DFB2016BC7C00A58A50 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				80DEF39A202B979D00C84669 /* InterstitialLoadingView.swift */,
 				8073557C2019DA8F000CC1B4 /* ModalCollectionViewController.swift */,
 				80860DFD2016BC7C00A58A50 /* Main.storyboard */,
+				8075A696202D2E7C0058BB5B /* CustomSearchBar.swift */,
 				8073557E2019E3BB000CC1B4 /* Favorite manager */,
 				80860E2B2017321200A58A50 /* API Manager */,
 				80860E39201828D500A58A50 /* Support Classes */,
@@ -537,6 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80860E2A2016E83000A58A50 /* APIData.swift in Sources */,
+				8075A697202D2E7C0058BB5B /* CustomSearchBar.swift in Sources */,
 				80DEF39B202B979D00C84669 /* InterstitialLoadingView.swift in Sources */,
 				80860E282016BC9000A58A50 /* DogAPIManager.swift in Sources */,
 				80860E3B201832E600A58A50 /* CustomFlowLayout.swift in Sources */,

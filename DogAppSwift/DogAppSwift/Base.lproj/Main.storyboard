@@ -31,7 +31,7 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttp-LG-EcF" userLabel="LineBreakView">
                                 <rect key="frame" x="10" y="59" width="355" height="1"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="tPb-o7-wUm"/>
                                 </constraints>
@@ -66,22 +66,31 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-XX-OJL" userLabel="LineBreakView">
                                 <rect key="frame" x="10" y="262" width="355" height="1"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Laa-JT-xdq"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKn-i6-r2P" customClass="CustomSearchBar" customModule="DogAppSwift" customModuleProvider="target">
+                                <rect key="frame" x="140.5" y="225" width="224.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oLE-il-mgf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Qf-36-4SO"/>
+                            <constraint firstItem="aKn-i6-r2P" firstAttribute="leading" secondItem="FHe-8F-zS5" secondAttribute="trailing" constant="10" id="9rB-t1-Zfn"/>
                             <constraint firstItem="Ttp-LG-EcF" firstAttribute="top" secondItem="fy7-AO-geV" secondAttribute="bottom" constant="4" id="LCg-8m-U2K"/>
                             <constraint firstItem="Ttp-LG-EcF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="LiP-oo-C6J"/>
                             <constraint firstItem="fy7-AO-geV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="MGG-c8-2Xg"/>
                             <constraint firstItem="crz-oN-pe2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QDd-nh-02K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="crz-oN-pe2" secondAttribute="bottom" id="SCv-Se-siT"/>
                             <constraint firstAttribute="trailing" secondItem="cwz-XX-OJL" secondAttribute="trailing" constant="10" id="YSf-q8-Clg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aKn-i6-r2P" secondAttribute="trailing" constant="10" id="ZSb-4j-XiY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="crz-oN-pe2" secondAttribute="trailing" id="d2B-T2-udo"/>
+                            <constraint firstItem="aKn-i6-r2P" firstAttribute="centerY" secondItem="FHe-8F-zS5" secondAttribute="centerY" id="gfe-n6-hln"/>
                             <constraint firstItem="fy7-AO-geV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kSA-d2-Qwu"/>
                             <constraint firstItem="oLE-il-mgf" firstAttribute="top" secondItem="Ttp-LG-EcF" secondAttribute="bottom" constant="4" id="kfY-C8-yWL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ttp-LG-EcF" secondAttribute="trailing" constant="10" id="m6p-zM-ALa"/>
@@ -98,6 +107,7 @@
                     <connections>
                         <outlet property="dogCardCollectionView" destination="crz-oN-pe2" id="uRW-af-HRs"/>
                         <outlet property="favoriteCollectionView" destination="oLE-il-mgf" id="Bch-7p-QOh"/>
+                        <outlet property="searchBar" destination="aKn-i6-r2P" id="E7r-O1-7Tz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
