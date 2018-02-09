@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialRoundedMTBold.ttf">
+            <string>ArialRoundedMTBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Base View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BaseViewController" customModule="DogAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy7-AO-geV">
+                                <rect key="frame" x="20" y="20" width="135" height="35"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttp-LG-EcF" userLabel="LineBreakView">
+                                <rect key="frame" x="10" y="59" width="355" height="1"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="tPb-o7-wUm"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="crz-oN-pe2">
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oxf-r2-akX">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oLE-il-mgf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="155"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jwH-Qx-L6m">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHe-8F-zS5">
+                                <rect key="frame" x="20" y="223" width="110.5" height="35"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-XX-OJL" userLabel="LineBreakView">
+                                <rect key="frame" x="10" y="262" width="355" height="1"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Laa-JT-xdq"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKn-i6-r2P" customClass="CustomSearchBar" customModule="DogAppSwift" customModuleProvider="target">
+                                <rect key="frame" x="140.5" y="225" width="224.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oLE-il-mgf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Qf-36-4SO"/>
+                            <constraint firstItem="aKn-i6-r2P" firstAttribute="leading" secondItem="FHe-8F-zS5" secondAttribute="trailing" constant="10" id="9rB-t1-Zfn"/>
+                            <constraint firstItem="Ttp-LG-EcF" firstAttribute="top" secondItem="fy7-AO-geV" secondAttribute="bottom" constant="4" id="LCg-8m-U2K"/>
+                            <constraint firstItem="Ttp-LG-EcF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="LiP-oo-C6J"/>
+                            <constraint firstItem="fy7-AO-geV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="MGG-c8-2Xg"/>
+                            <constraint firstItem="crz-oN-pe2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QDd-nh-02K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="crz-oN-pe2" secondAttribute="bottom" id="SCv-Se-siT"/>
+                            <constraint firstAttribute="trailing" secondItem="cwz-XX-OJL" secondAttribute="trailing" constant="10" id="YSf-q8-Clg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aKn-i6-r2P" secondAttribute="trailing" constant="10" id="ZSb-4j-XiY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="crz-oN-pe2" secondAttribute="trailing" id="d2B-T2-udo"/>
+                            <constraint firstItem="aKn-i6-r2P" firstAttribute="centerY" secondItem="FHe-8F-zS5" secondAttribute="centerY" id="gfe-n6-hln"/>
+                            <constraint firstItem="fy7-AO-geV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kSA-d2-Qwu"/>
+                            <constraint firstItem="oLE-il-mgf" firstAttribute="top" secondItem="Ttp-LG-EcF" secondAttribute="bottom" constant="4" id="kfY-C8-yWL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ttp-LG-EcF" secondAttribute="trailing" constant="10" id="m6p-zM-ALa"/>
+                            <constraint firstItem="crz-oN-pe2" firstAttribute="top" secondItem="cwz-XX-OJL" secondAttribute="bottom" constant="4" id="nFq-fD-Gy2"/>
+                            <constraint firstItem="FHe-8F-zS5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oEs-xm-0pq"/>
+                            <constraint firstItem="FHe-8F-zS5" firstAttribute="top" secondItem="oLE-il-mgf" secondAttribute="bottom" constant="4" id="qlu-YR-PWH"/>
+                            <constraint firstItem="oLE-il-mgf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sCS-3z-aYS"/>
+                            <constraint firstItem="cwz-XX-OJL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="sgp-Tt-Uop"/>
+                            <constraint firstItem="cwz-XX-OJL" firstAttribute="top" secondItem="FHe-8F-zS5" secondAttribute="bottom" constant="4" id="tb5-MY-hY0"/>
+                            <constraint firstItem="crz-oN-pe2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="wwI-CJ-cKE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="dogCardCollectionView" destination="crz-oN-pe2" id="uRW-af-HRs"/>
+                        <outlet property="favoriteCollectionView" destination="oLE-il-mgf" id="Bch-7p-QOh"/>
+                        <outlet property="searchBar" destination="aKn-i6-r2P" id="E7r-O1-7Tz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="99.400299850074973"/>
+        </scene>
+        <!--Modal Collection View Controller-->
+        <scene sceneID="NR6-N1-Al6">
+            <objects>
+                <viewController storyboardIdentifier="modalCollectionViewController" id="Nhb-Se-gGt" customClass="ModalCollectionViewController" customModule="DogAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Glb-Pd-9AB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nkO-Si-ccz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kjn-6q-Wp1">
+                                    <size key="itemSize" width="228" height="207"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="imageCell" id="rSD-IV-EIG">
+                                        <rect key="frame" x="73.5" y="0.0" width="228" height="207"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="228" height="207"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XOo-4g-dNc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="228" height="207"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="XOo-4g-dNc" secondAttribute="trailing" id="pZH-Dn-fTu"/>
+                                            <constraint firstItem="XOo-4g-dNc" firstAttribute="top" secondItem="rSD-IV-EIG" secondAttribute="top" id="uJA-12-jZv"/>
+                                            <constraint firstAttribute="bottom" secondItem="XOo-4g-dNc" secondAttribute="bottom" id="wWW-XN-dGn"/>
+                                            <constraint firstItem="XOo-4g-dNc" firstAttribute="leading" secondItem="rSD-IV-EIG" secondAttribute="leading" id="y9I-Ch-2EE"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghE-Rb-w47">
+                                <rect key="frame" x="319" y="30" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="closePressed:" destination="Nhb-Se-gGt" eventType="touchUpInside" id="xBn-ol-HRu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ghE-Rb-w47" firstAttribute="top" secondItem="zHd-JO-W7S" secondAttribute="top" constant="10" id="Gcz-QB-Jau"/>
+                            <constraint firstItem="zHd-JO-W7S" firstAttribute="bottom" secondItem="nkO-Si-ccz" secondAttribute="bottom" id="QFE-lb-AyS"/>
+                            <constraint firstItem="zHd-JO-W7S" firstAttribute="trailing" secondItem="ghE-Rb-w47" secondAttribute="trailing" constant="10" id="c6G-6E-wB9"/>
+                            <constraint firstItem="nkO-Si-ccz" firstAttribute="leading" secondItem="zHd-JO-W7S" secondAttribute="leading" id="mlf-gH-oa9"/>
+                            <constraint firstItem="zHd-JO-W7S" firstAttribute="trailing" secondItem="nkO-Si-ccz" secondAttribute="trailing" id="oeZ-1b-MWt"/>
+                            <constraint firstItem="nkO-Si-ccz" firstAttribute="top" secondItem="zHd-JO-W7S" secondAttribute="top" id="qB6-lg-ZII"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zHd-JO-W7S"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="ghE-Rb-w47" id="Wi4-HN-85f"/>
+                        <outlet property="collectionView" destination="nkO-Si-ccz" id="MFD-1h-cLy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qr-ZL-kL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80.799999999999997" y="861.3193403298352"/>
+        </scene>
+    </scenes>
+</document>

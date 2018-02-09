@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FavoriteBreedCollectionViewCell" customModule="DogAppSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="456" height="270"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="456" height="270"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apV-dS-NKI" userLabel="ShadowView">
+                        <rect key="frame" x="0.0" y="0.0" width="456" height="270"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mur-dp-aNB">
+                        <rect key="frame" x="0.0" y="0.0" width="456" height="270"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="R2v-ug-Z7w">
+                                <rect key="frame" x="20" y="0.0" width="416" height="270"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqs-4e-WlD">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="270"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwj-pK-12y">
+                                        <rect key="frame" x="370" y="0.0" width="46" height="270"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="removePressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="g9j-R8-m2P"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="R2v-ug-Z7w" secondAttribute="bottom" id="LC0-VY-0rK"/>
+                            <constraint firstItem="R2v-ug-Z7w" firstAttribute="top" secondItem="mur-dp-aNB" secondAttribute="top" id="NzG-11-C2K"/>
+                            <constraint firstAttribute="trailing" secondItem="R2v-ug-Z7w" secondAttribute="trailing" constant="20" id="Utw-se-Dxx"/>
+                            <constraint firstItem="R2v-ug-Z7w" firstAttribute="leading" secondItem="mur-dp-aNB" secondAttribute="leading" constant="20" id="VnO-LP-pSB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="apV-dS-NKI" secondAttribute="trailing" id="2cF-VU-72z"/>
+                <constraint firstItem="mur-dp-aNB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9Ed-of-eR2"/>
+                <constraint firstAttribute="trailing" secondItem="mur-dp-aNB" secondAttribute="trailing" id="ExE-4k-pew"/>
+                <constraint firstAttribute="bottom" secondItem="mur-dp-aNB" secondAttribute="bottom" id="IUY-of-1WE"/>
+                <constraint firstItem="apV-dS-NKI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XuD-Zr-gOf"/>
+                <constraint firstItem="apV-dS-NKI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YxK-aY-dcu"/>
+                <constraint firstAttribute="bottom" secondItem="apV-dS-NKI" secondAttribute="bottom" id="fln-XJ-Iq7"/>
+                <constraint firstItem="mur-dp-aNB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="x4U-ND-VvE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="456" height="270"/>
+            <connections>
+                <outlet property="baseView" destination="mur-dp-aNB" id="Wnp-Gq-dQe"/>
+                <outlet property="breedNameLabel" destination="Aqs-4e-WlD" id="Yvv-28-FJ4"/>
+                <outlet property="removeButton" destination="jwj-pK-12y" id="wbb-va-0if"/>
+                <outlet property="shadowView" destination="apV-dS-NKI" id="nRf-jL-D3C"/>
+            </connections>
+            <point key="canvasLocation" x="147" y="-14"/>
+        </collectionViewCell>
+    </objects>
+</document>
