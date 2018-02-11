@@ -85,7 +85,6 @@ class BaseViewController: UIViewController {
             layout.sectionInset = UIEdgeInsets(top: 0, left: layout.minimumLineSpacing * 2, bottom: 0, right: layout.minimumLineSpacing * 2)
         }
     }
-    
     func presentImageCollectionViewControllerModally(breedName:String) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "modalCollectionViewController") as? ModalCollectionViewController {
             interstitialLoadingView?.isHidden = false
@@ -150,7 +149,6 @@ extension BaseViewController: FavoriteBreedCollectionViewCellDelegate {
     }
     
     func deletePressed(withBreed: String) {
-        print("delete pressed")
         FavoriteBreedManager.shared.removeFromFavorites(breedName: withBreed)
         DispatchQueue.main.async {
             self.favoriteCollectionView.reloadData()

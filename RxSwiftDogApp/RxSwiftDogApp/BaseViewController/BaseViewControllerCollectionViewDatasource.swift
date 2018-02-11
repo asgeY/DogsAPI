@@ -15,7 +15,7 @@ extension BaseViewController: UICollectionViewDataSource {
             return modifiedCardData.count
         }
         if collectionView == favoriteCollectionView {
-            return FavoriteBreedManager.shared.getFavorites().count
+            return FavoriteBreedManager.shared.favoriteData.value.count
         }
         return 0
     }
@@ -30,7 +30,7 @@ extension BaseViewController: UICollectionViewDataSource {
         }
         if collectionView == favoriteCollectionView {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoriteBreedCell", for: indexPath) as? FavoriteBreedCollectionViewCell {
-                cell.updateCell(withBreed: FavoriteBreedManager.shared.getFavorites()[indexPath.item], index: indexPath.item)
+                cell.updateCell(withBreed: FavoriteBreedManager.shared.favoriteData.value[indexPath.item], index: indexPath.item)
                 cell.delegate = self
                 return cell
             }

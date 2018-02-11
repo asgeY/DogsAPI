@@ -81,12 +81,11 @@ class FavoriteBreedCollectionViewCell: UICollectionViewCell {
     
     @IBAction func removePressed(_ sender: Any) {
         if let breedName = breedName {
-            delegate?.deletePressed(withBreed: breedName)
+            FavoriteBreedManager.shared.removeFromFavorites(breedName: breedName)
         }
     }
 }
 
 protocol FavoriteBreedCollectionViewCellDelegate: class {
     func cellPressed(withBreed:String)
-    func deletePressed(withBreed:String)
 }

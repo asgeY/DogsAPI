@@ -107,12 +107,11 @@ class DogCard: UICollectionViewCell {
     }
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         if let breedName = data?.breedName {
-            delegate?.favoritePressed(withBreed: breedName)
+            FavoriteBreedManager.shared.addToFavorites(breedName: breedName)
         }
     }
 }
 
 protocol DogCardDelegate: class {
     func viewAllPressed(withBreed:String)
-    func favoritePressed(withBreed:String)
 }

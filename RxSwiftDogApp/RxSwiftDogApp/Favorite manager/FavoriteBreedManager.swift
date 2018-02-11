@@ -7,17 +7,19 @@
 //
 
 import Foundation
+import RxSwift
 
 class FavoriteBreedManager {
     
     static let shared = FavoriteBreedManager()
     static private let userDefaultsFavoriteArrayString = "userDefaultsFavoriteArrayString"
+    var favoriteData = Variable<[String]>([])
     
     private init() {
-        
+        favoriteData.value = getFavorites()
     }
     
-    func getFavorites() -> [String] {
+    private func getFavorites() -> [String] {
         if let favoritesArray = UserDefaults.standard.array(forKey: FavoriteBreedManager.userDefaultsFavoriteArrayString) as? [String] {
             return favoritesArray
         }
@@ -27,19 +29,20 @@ class FavoriteBreedManager {
     }
     
     func addToFavorites(breedName:String) {
-        // Check if favorites array exists
+        
+        // Get array or create a new one
+        var newArray = [String]()
         if let favoritesArray = UserDefaults.standard.array(forKey: FavoriteBreedManager.userDefaultsFavoriteArrayString) as? [String] {
-            var newArray = favoritesArray
-            if !newArray.contains(where: { string in
-                string == breedName
-            }) {
-                newArray.append(breedName)
-                UserDefaults.standard.set(newArray, forKey: FavoriteBreedManager.userDefaultsFavoriteArrayString)
-            }
+            newArray = favoritesArray
         }
-        // Otherwise create it with the new favorited item
-        else {
-            UserDefaults.standard.set([breedName], forKey: FavoriteBreedManager.userDefaultsFavoriteArrayString)
+        
+        // If the value doesn't exist in the array add it
+        if !newArray.contains(where: { string in
+            string == breedName
+        }) {
+            newArray.append(breedName)
+            UserDefaults.standard.set(newArray, forKey: FavoriteBreedManager.userDefaultsFavoriteArrayString)
+            favoriteData.value = newArray
         }
     }
     
@@ -51,6 +54,7 @@ class FavoriteBreedManager {
                 newArray.remove(at: index)
             }
             UserDefaults.standard.set(newArray, forKey: FavoriteBreedManager.userDefaultsFavoriteArrayString)
+            favoriteData.value = newArray
         }
     }
 }

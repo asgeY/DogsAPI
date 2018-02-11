@@ -27,7 +27,7 @@ class BaseViewController: UIViewController {
         
         setupRx()
         setupInterstitialLoadingView()
-        downloadDogCardData()
+        downloadCardData()
         setupCollectionViews()
         
         // Setup the delegate for dismissal
@@ -59,8 +59,18 @@ class BaseViewController: UIViewController {
             .disposed(by: disposeBag)
         
         // React to favorites being modified
+        FavoriteBreedManager.shared.favoriteData.asObservable()
+            .subscribe({event in
+                if event.element != nil {
+                    DispatchQueue.main.async {
+                        self.favoriteCollectionView.reloadData()
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
         
         // React to downloading of new modal data
+        
     }
     
     private func setupInterstitialLoadingView() {
@@ -125,7 +135,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    private func presentImageCollectionViewControllerModally(breedName:String) {
+    func presentImageCollectionViewControllerModally(breedName:String) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "modalCollectionViewController") as? ModalCollectionViewController {
             // Show interestitial loading while waiting for response
             interstitialLoadingView?.isHidden = false
