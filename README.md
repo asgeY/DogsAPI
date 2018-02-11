@@ -8,6 +8,7 @@ Implementations completed:
 
 Implementations to be considered:
 - RxSwift
+- Obj-C
 - Android (Kotlin)
 - Xamarin
 - ReactNative

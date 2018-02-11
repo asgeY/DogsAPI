@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D03BAF0EE5AD2467DE271F3 /* Pods_RxSwiftDogAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE3A370D5339720AFBEFBB9 /* Pods_RxSwiftDogAppTests.framework */; };
+		80415E3F202FE3EE00614140 /* BaseViewControllerUITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80415E3E202FE3EE00614140 /* BaseViewControllerUITextFieldDelegate.swift */; };
+		80415E41202FEDA000614140 /* BaseViewControllerCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80415E40202FEDA000614140 /* BaseViewControllerCollectionViewDatasource.swift */; };
+		80415E43202FEE0E00614140 /* BaseViewControllerCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80415E42202FEE0E00614140 /* BaseViewControllerCellDelegate.swift */; };
 		809B72A5202D6EBF00ED801F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B72A4202D6EBF00ED801F /* AppDelegate.swift */; };
 		809B72AA202D6EBF00ED801F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809B72A8202D6EBF00ED801F /* Main.storyboard */; };
 		809B72AC202D6EBF00ED801F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 809B72AB202D6EBF00ED801F /* Assets.xcassets */; };
@@ -51,6 +54,9 @@
 
 /* Begin PBXFileReference section */
 		3E6C73AA49A016F9BD63C4CA /* Pods-RxSwiftDogAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDogAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftDogAppUITests/Pods-RxSwiftDogAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		80415E3E202FE3EE00614140 /* BaseViewControllerUITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerUITextFieldDelegate.swift; sourceTree = "<group>"; };
+		80415E40202FEDA000614140 /* BaseViewControllerCollectionViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerCollectionViewDatasource.swift; sourceTree = "<group>"; };
+		80415E42202FEE0E00614140 /* BaseViewControllerCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerCellDelegate.swift; sourceTree = "<group>"; };
 		809B72A1202D6EBF00ED801F /* RxSwiftDogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		809B72A4202D6EBF00ED801F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		809B72A9202D6EBF00ED801F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +121,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80415E3D202FE37600614140 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				809B72E3202D70A600ED801F /* BaseViewController.swift */,
+				80415E42202FEE0E00614140 /* BaseViewControllerCellDelegate.swift */,
+				80415E40202FEDA000614140 /* BaseViewControllerCollectionViewDatasource.swift */,
+				80415E3E202FE3EE00614140 /* BaseViewControllerUITextFieldDelegate.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
 		809B7298202D6EBF00ED801F = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				809B72A4202D6EBF00ED801F /* AppDelegate.swift */,
-				809B72E3202D70A600ED801F /* BaseViewController.swift */,
+				80415E3D202FE37600614140 /* BaseViewController */,
 				809B72EE202D70A700ED801F /* CustomSearchBar.swift */,
 				809B72F0202D70A700ED801F /* InterstitialLoadingView.swift */,
 				809B72F1202D70A700ED801F /* ModalCollectionViewController.swift */,
@@ -547,10 +564,13 @@
 				809B72FC202D70A700ED801F /* DogCardData.swift in Sources */,
 				809B72FF202D70A700ED801F /* CustomSearchBar.swift in Sources */,
 				809B72F6202D70A700ED801F /* DogAPIManager.swift in Sources */,
+				80415E3F202FE3EE00614140 /* BaseViewControllerUITextFieldDelegate.swift in Sources */,
 				809B72D4202D701600ED801F /* FavoriteBreedManager.swift in Sources */,
 				809B72FE202D70A700ED801F /* ViewWithGradient.swift in Sources */,
 				809B72FA202D70A700ED801F /* DogCard.swift in Sources */,
+				80415E43202FEE0E00614140 /* BaseViewControllerCellDelegate.swift in Sources */,
 				809B7301202D70A700ED801F /* InterstitialLoadingView.swift in Sources */,
+				80415E41202FEDA000614140 /* BaseViewControllerCollectionViewDatasource.swift in Sources */,
 				809B72F8202D70A700ED801F /* FavoriteBreedCollectionViewCell.swift in Sources */,
 				809B72A5202D6EBF00ED801F /* AppDelegate.swift in Sources */,
 				809B72FD202D70A700ED801F /* CustomFlowLayout.swift in Sources */,
